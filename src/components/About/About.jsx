@@ -1,6 +1,6 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import profileImage from "../../assets/IMG_1190.jpg";
+import profileImage from "../../assets/Heyttimage.png";
 
 const About = () => {
   return (
