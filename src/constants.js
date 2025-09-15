@@ -45,7 +45,7 @@ import marsrover from './assets/work_logo/MARSROVER.jpg';
 import rocketsim from './assets/work_logo/Rocketsim.png';
 import qrng from './assets/work_logo/QRNG PASS GEN.png';
 import Stackit from './assets/work_logo/Stackit.png';
-import ocr from './assets/work_logo/ocr.png';
+import ocr from './assets/work_logo/OCR.png';
 
 
 export const SkillsInfo = [
