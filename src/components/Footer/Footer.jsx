@@ -33,10 +33,10 @@ const Footer = () => {
         </nav>
         <div className="flex flex-wrap justify-center space-x-4 mt-6">
           {[
-            { icon: <FaGithub />, link: "https://github.com/your-github-username" },
-            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/tarun-kaushik-553b441a4" },
-            { icon: <FaInstagram />, link: "https://www.instagram.com/coding_.master/" },
-            { icon: <FaSquareXTwitter />, link: "https://x.com/your-twitter-username" },
+            { icon: <FaGithub />, link: "https://github.com/heytt-satra" },
+            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/heytt-satra/" },
+            { icon: <FaInstagram />, link: "https://www.instagram.com/heyttsatra/" },
+            { icon: <FaSquareXTwitter />, link: "https://x.com/satra_heytt" },
           ].map((item, index) => (
             <a
               key={index}
