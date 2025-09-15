@@ -205,7 +205,7 @@ export const projects = [
     image: ocr,
     tags: ["Streamlit", "OpenCV", "pytorch", "transformers"],
     github: "https://github.com/heytt-satra/OCR-project-",
-     webapp: "https://codingmasterweb.in/",
+     
     
   },
 ]
