@@ -44,7 +44,7 @@ const About = () => {
             Along side this, I'm aiming to create meaningful tech that shapes the future.
           </p>
           <a
-            href="https://drive.google.com/file/d/1sH8szlUAkz1jgy_-O07yyj9rIYqg4wnh/view?usp=sharing"
+            href="https://docs.google.com/document/d/1EBCSBOYNpufeVTlgFcVtclxL9e4cNbNW/edit?usp=drive_link&ouid=111392976395632128075&rtpof=true&sd=true"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
