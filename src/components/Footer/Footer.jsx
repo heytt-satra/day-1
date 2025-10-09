@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="text-white py-8 px-[12vw] md:px-[7vw] lg:px-[20vw] bg-black">
       <div className="container mx-auto text-center">
-        <h2 className="text-xl font-semibold text-[#ff0000]">Heytt Satra</h2>
+        <h2 className="text-xl font-semibold text-[#ff0000]">Heytt S Satra</h2>
         <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 mt-4">
           {[
             { name: "About", id: "about" },

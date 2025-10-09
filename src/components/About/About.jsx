@@ -14,7 +14,7 @@ const About = () => {
             Hi, I am
           </h1>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            Heytt Satra
+            Heytt S Satra
           </h2>
           <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-[#ff0000] leading-tight">
             <span className="text-white">I am </span>
