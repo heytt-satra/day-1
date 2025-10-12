@@ -35,7 +35,7 @@ const About = () => {
               className="text-[#ff0000]"
             />
           </h3>
-          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed text-justify">
             I’m a computer science student with a passion for 
             building at the intersection of technology and innovation. 
             My work spans full-stack development, machine learning, robotics, research and quantum computing,  
@@ -66,7 +66,7 @@ const About = () => {
           >
             <img
               src={profileImage}
-              alt="Heytt Satra"
+              alt="Heytt S Satra"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div
