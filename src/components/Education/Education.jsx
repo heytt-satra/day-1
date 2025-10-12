@@ -11,7 +11,7 @@ const Education = () => {
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
         <div className="w-32 h-1 bg-black mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
+        <p className="text-gray-400 mt-4 text-lg font-semibold text-justify" >
           My education has been a journey of learning and development. Here are the details of my academic background
         </p>
       </div>
