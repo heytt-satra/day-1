@@ -49,7 +49,7 @@ const Blogs = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
           My <span className="text-[#170101]">Blogs</span>
         </h2>
-        <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+        <p className="text-white text-lg max-w-2xl mx-auto">
           Sharing insights on technology, innovation, and my journey in software development
         </p>
       </div>
