@@ -47,7 +47,7 @@ const Blogs = () => {
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          My <span className="text-[#ff0000]">Blogs</span>
+          My <span className="text-[#000000]">Blogs</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
           Sharing insights on technology, innovation, and my journey in software development
