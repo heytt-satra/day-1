@@ -1,3 +1,4 @@
+// api/index.js
 import express from 'express';
 import multer from 'multer';
 import cors from 'cors';
@@ -5,26 +6,26 @@ import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import serverless from 'serverless-http';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// make sure uploads folder exists
-const uploadsPath = path.join(__dirname, 'public', 'uploads');
+// Ensure public/uploads exists inside the project
+const uploadsPath = path.join(__dirname, '..', 'public', 'uploads');
 if (!fs.existsSync(uploadsPath)) {
   fs.mkdirSync(uploadsPath, { recursive: true });
 }
 
-// serve uploads
+// Serve uploads statically from /uploads
 app.use('/uploads', express.static(uploadsPath));
 
-const BLOGS_FILE = path.join(__dirname, 'blogs.json');
+const BLOGS_FILE = path.join(__dirname, '..', 'blogs.json');
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
 
 const storage = multer.diskStorage({
@@ -81,10 +82,10 @@ app.get('/api/blogs/:id', (req, res) => {
   const blogs = readBlogs();
   const idParam = req.params.id;
 
-  // match number or string ids
+  // numeric id
   let blog = blogs.find(b => String(b.id) === idParam);
 
-  // fallback for slug or string type ids (_id)
+  // fallback for _id or slug
   if (!blog) {
     blog = blogs.find(b => b._id === idParam || b.slug === idParam);
   }
@@ -106,7 +107,7 @@ app.post('/api/blogs', (req, res) => {
   const blogs = readBlogs();
   const newBlog = {
     ...blog,
-    id: blogs.length > 0 ? Math.max(...blogs.map(b => parseInt(b.id))) + 1 : 0,
+    id: blogs.length > 0 ? Math.max(...blogs.map(b => parseInt(b.id || 0))) + 1 : 0,
     createdAt: new Date().toISOString()
   };
 
@@ -181,22 +182,7 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
   });
 });
 
-//
-// serve frontend build
-//
-const publicFolder = path.join(__dirname, 'public');
-app.use(express.static(publicFolder));
-
-//
-// fallback to SPA routing
-//
-app.get('*', (req, res) => {
-  res.sendFile(path.join(publicFolder, 'index.html'));
-});
-
-//
-// start server on all interfaces (fixes deployment issues)
-//
-app.listen(PORT, () => {
-  console.log(`Blog API server running on http://0.0.0.0:${PORT}`);
-});
+// Export the express app as a serverless handler
+const handler = serverless(app);
+export default handler;
+git 
