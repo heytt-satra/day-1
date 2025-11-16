@@ -17,7 +17,7 @@ export default {
         blob: 'blob 10s infinite',
       },
       backgroundImage: {
-        'skills-gradient': 'linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%)',
+        'skills-gradient': 'linear-gradient(38.73deg, rgba(203, 0, 1, 0.15) 0%, rgba(201, 0, 1, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 2, 0) 50%, rgba(220, 70, 2, 0.15) 100%)',
       },
       clipPath: {
         'custom-2': 'polygon(0 0, 100% 0, 100% 90%, 0 100%)',
