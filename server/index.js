@@ -116,7 +116,7 @@ app.delete('/api/blogs/:id', (req, res) => {
 
 app.post('/api/auth/login', (req, res) => {
     const { password } = req.body;
-    if (password === 'admin123') {
+    if (password === 'HEYTT5224@s') {
         res.json({ success: true });
     } else {
         res.status(401).json({ success: false });

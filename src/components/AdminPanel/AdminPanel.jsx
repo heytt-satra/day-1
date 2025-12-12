@@ -125,6 +125,59 @@ const AdminPanel = () => {
     }
   };
 
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState("");
+  const [loginError, setLoginError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await fetch(`${API_URL}/auth/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: passwordInput })
+        });
+        const data = await response.json();
+        if (data.success) {
+            setIsAuthenticated(true);
+            setLoginError("");
+        } else {
+            setLoginError("Invalid Password");
+        }
+    } catch (err) {
+        setLoginError("Login failed");
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+        <div className="min-h-screen bg-obsidian flex items-center justify-center px-6">
+            <div className="glass-panel p-8 rounded-2xl border border-glass-border max-w-md w-full">
+                <h1 className="text-3xl font-bold text-white mb-6 text-center">Admin <span className="text-crimson">Access</span></h1>
+                <form onSubmit={handleLogin} className="space-y-6">
+                    <div>
+                        <input 
+                            type="password" 
+                            value={passwordInput}
+                            onChange={(e) => setPasswordInput(e.target.value)}
+                            className="w-full px-4 py-3 bg-black/50 border border-glass-border rounded-lg text-white focus:border-crimson outline-none"
+                            placeholder="Enter Password"
+                        />
+                    </div>
+                    {loginError && <p className="text-crimson text-sm text-center">{loginError}</p>}
+                    <button 
+                        type="submit" 
+                        className="w-full py-3 bg-crimson text-white font-bold rounded-lg hover:bg-crimson-dark transition-all shadow-neon"
+                    >
+                        Unlock Dashboard
+                    </button>
+                </form>
+            </div>
+        </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-obsidian py-24 px-6 md:px-20 lg:px-32">
       <div className="max-w-6xl mx-auto">
