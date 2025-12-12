@@ -2,15 +2,18 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
+import Services from "./components/Services/Services";
 import Skills from "./components/Skills/Skills";
 import Experience from "./components/Experience/Experience";
 import Work from "./components/Work/Work";
+import Testimonials from "./components/Testimonials/Testimonials";
 import Education from "./components/Education/Education";
 import Blog from "./components/Blog/Blog";
 import BlogPost from "./components/Blog/BlogPost";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import Footer from "./components/Footer/Footer";
-import BlurBlob from "./components/BlurBlob";
+import Background from "./components/Background";
+import Cursor from "./components/Cursor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -18,13 +21,17 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <About />
-      <Skills />
-      <Experience />
-      <Work />
-      <Education />
-      <Blog />
-      <Footer />
+      <main className="relative z-10">
+        <About />
+        <Services />
+        <Skills />
+        <Experience />
+        <Work />
+        <Testimonials />
+        <Education />
+        <Blog />
+        <Footer />
+      </main>
     </>
   );
 };
@@ -32,18 +39,18 @@ const HomePage = () => {
 const App = () => {
   return (
     <Router>
-      <div className="bg-gradient-to-b from-black to-[#ff0000]">
-        <BlurBlob position={{ top: "35%", left: "20%" }} size={{ width: "30%", height: "40%" }} />
-        <div className="absolute inset-0 bg-[conic-gradient(#800000_90deg,transparent_90deg_180deg,#800000_180deg_270deg,transparent_270deg)] bg-[size:28px_48px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-        <div className="relative pt-20">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/admin" element={<AdminPanel />} />
-          </Routes>
-          <Analytics />
-          <SpeedInsights/>
-        </div>
+      <div className="min-h-screen text-platinum selection:bg-crimson selection:text-white">
+        <Cursor />
+        <Background />
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/admin" element={<AdminPanel />} />
+        </Routes>
+        
+        <Analytics />
+        <SpeedInsights/>
       </div>
     </Router>
   );

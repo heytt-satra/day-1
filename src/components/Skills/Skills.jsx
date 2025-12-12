@@ -1,63 +1,86 @@
-// src/components/Skills/Skills.jsx
 import React from "react";
 import { SkillsInfo } from "../../constants";
-import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};
 
 const Skills = () => (
   <section
     id="skills"
-    className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
+    className="py-24 px-6 md:px-20 lg:px-32 relative"
   >
     {/* Section Title */}
-    <div className="text-center mb-8">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white">SKILLS</h2>
-      <div className="w-24 h-1 bg-[#ff0000] mx-auto mt-2"></div>
-      <p className="text-gray-400 mt-4 text-lg font-semibold text-justify">
-      A collection of my technical skills and expertise honed through various projects and experiences
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Core <span className="text-crimson">Skills</span></h2>
+      <div className="w-24 h-1.5 bg-crimson mx-auto rounded-full mb-6"></div>
+      <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        A collection of my technical expertise across various domains, constantly expanding as I explore new technologies.
       </p>
-    </div>
+    </motion.div>
 
     {/* Skill Categories */}
-    <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
-      {SkillsInfo.map((category) => (
-        <div
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      {SkillsInfo.map((category, index) => (
+        <motion.div
           key={category.title}
-          className="bg-baby to-pink-950 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-[#ffa8a8] 
-          shadow-[0_0_20px_1px_rgba(255,0,0,0.3)]"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="glass-panel p-8 hover:border-crimson/30 transition-colors duration-300"
         >
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
-            {category.title}
+          <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+             <span className="w-2 h-8 bg-crimson rounded-full"></span>
+             {category.title}
           </h3>
 
-          {/* Skill Items - 3 per row on larger screens */}
-          <Tilt
-            key={category.title}
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex flex-wrap gap-3"
           >
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-              {category.skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 sm:py-2 sm:px-2 text-center"
-                >
-                  <img
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="w-6 h-6 sm:w-5 sm:h-5"
-                  />
-                  <span className="text-xs sm:text-sm text-gray-300">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </Tilt>
-        </div>
+            {category.skills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 51, 51, 0.1)" }}
+                className="flex items-center gap-2 bg-charcoal/50 border border-glass-border px-4 py-2.5 rounded-xl cursor-default transition-colors group"
+              >
+                <img
+                  src={skill.logo}
+                  alt={skill.name}
+                  className="w-6 h-6 object-contain group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"
+                />
+                <span className="text-sm text-gray-300 font-medium group-hover:text-white transition-colors">
+                  {skill.name}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       ))}
     </div>
   </section>

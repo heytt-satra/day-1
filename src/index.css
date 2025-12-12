@@ -1,26 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-    font-family: "Poppins", sans-serif;
+@layer base {
+  body {
+    @apply bg-obsidian text-platinum font-sans overflow-x-hidden antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass-bg backdrop-blur-md border border-glass-border shadow-glass rounded-xl;
+  }
+  
+  .glass-nav {
+    @apply bg-[rgba(5,5,5,0.8)] backdrop-blur-lg border-b border-glass-border;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+  }
+
+  .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  cursor: none; /* Hide default cursor for custom cursor */
 }
 
-@layer utilities {
-    .clip-path-custom {
-      clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
-    }
-    .clip-path-custom-2 {
-        clip-path: polygon(0 0, 100% 0, 100% 98%, 25% 95%, 0 100%);
-      }
-    .clip-path-custom-3 {
-        clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 96%, 0 100%);
-      }
-  }
-  
+a, button {
+  cursor: none; /* Hide cursor on interactive elements too */
+}

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { blogs as staticBlogs } from "../../constants";
 import { FaArrowLeft, FaClock, FaCalendar } from "react-icons/fa";
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'http://localhost:3001/api';
 
 const BlogPost = () => {
   const { id } = useParams();

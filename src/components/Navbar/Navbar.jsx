@@ -1,162 +1,111 @@
-import React, { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleMenuItemClick = (sectionId) => {
-    setActiveSection(sectionId);
-    setIsOpen(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const menuItems = [
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
-    { id: "work", label: "Projects" },
-    { id: "education", label: "Education" },
-    { id: "blog", label: "Blog" },
+  const navLinks = [
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Skills", href: "#skills" },
+    { name: "Work", href: "#work" },
+    { name: "Blog", href: "#blogs" }, // Fixed link to match ID if possible, usually it's 'blog' or 'blogs'
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav
-      className="fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] bg-black bg-opacity-50 backdrop-blur-md shadow-md"
-    >
-      <div className='text-white py-5 flex justify-between items-center'>
-        <div className="text-lg font-semibold cursor-pointer">
-          <span className="text-[#ff0000]">&lt;</span>
-          <span className="text-white">Heytt</span>
-          <span className="text-[#ff0000]">/</span>
-          <span className="text-white">Satra</span>
-          <span className="text-[#ff0000]">&gt;</span>
-        </div>
+    <>
+        <motion.nav
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+            className={`fixed left-0 right-0 z-50 transition-all duration-300 mx-auto ${
+                scrolled 
+                ? "top-4 w-[90%] max-w-5xl py-3 bg-black/60 backdrop-blur-xl border border-glass-border shadow-neon rounded-full" 
+                : "top-0 w-full py-6 bg-transparent"
+            }`}
+        >
+            <div className="px-6 md:px-8 flex justify-between items-center">
+                {/* Logo */}
+                <a href="#" className="text-xl md:text-2xl font-bold font-display tracking-tight group flex items-center gap-1">
+                    <span className="text-crimson transition-transform group-hover:-translate-x-1">&lt;</span>
+                    <span className="text-white">Heytt</span>
+                    <span className="text-crimson">/</span>
+                    <span className="text-white">Satra</span>
+                    <span className="text-crimson transition-transform group-hover:translate-x-1">&gt;</span>
+                </a>
 
-        <ul className="hidden md:flex space-x-8 text-gray-300">
-          {menuItems.map((item) => (
-            <li
-              key={item.id}
-              className={`cursor-pointer hover:text-[#ff0000] ${
-                activeSection === item.id ? "text-[#ff0000]" : ""
-              }`}
-            >
-              <button onClick={() => handleMenuItemClick(item.id)}>
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
+                {/* Desktop Nav */}
+                <div className="hidden md:flex items-center gap-8">
+                    {navLinks.map((link) => (
+                        <a 
+                            key={link.name} 
+                            href={link.href}
+                            className="text-gray-300 hover:text-crimson font-medium text-sm uppercase tracking-wider transition-colors relative group"
+                        >
+                            {link.name}
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-crimson transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    ))}
+                </div>
 
-        <div className="hidden md:flex space-x-4">
-          <a
-            href="https://github.com/heytt-satra"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#ff0000]"
-          >
-            <FaGithub size={24} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/heytt-satra/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#ff0000]"
-          >
-            <FaLinkedin size={24} />
-          </a>
-          <a
-            href="https://www.instagram.com/heyttsatra/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#ff0000]"
-          >
-            <FaInstagram size={24} />
-          </a>
-          <a
-            href="https://x.com/satra_heytt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#ff0000]"
-          >
-            <FaSquareXTwitter size={24} />
-          </a>
-        </div>
+                {/* Socials Desktop */}
+                 <div className="hidden md:flex items-center gap-4 border-l border-white/10 pl-6">
+                    <a href="https://github.com/heytt-satra" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors"><FaGithub /></a>
+                    <a href="https://www.linkedin.com/in/heytt-satra/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors"><FaLinkedin /></a>
+                </div>
 
-        <div className="md:hidden">
-          {isOpen ? (
-            <FiX
-              className="text-3xl text-[#ff0000] cursor-pointer"
-              onClick={() => setIsOpen(false)}
-            />
-          ) : (
-            <FiMenu
-              className="text-3xl text-[#ff0000] cursor-pointer"
-              onClick={() => setIsOpen(true)}
-            />
-          )}
-        </div>
-      </div>
-
-      {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg md:hidden">
-          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
-            {menuItems.map((item) => (
-              <li
-                key={item.id}
-                className={`cursor-pointer hover:text-[#ff0000] ${
-                  activeSection === item.id ? "text-[#ff0000]" : ""
-                }`}
-              >
-                <button onClick={() => handleMenuItemClick(item.id)}>
-                  {item.label}
-                </button>
-              </li>
-            ))}
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/heytt-satra"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[#ff0000]"
-              >
-                <FaGithub size={24} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/heytt-satra/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[#ff0000]"
-              >
-                <FaLinkedin size={24} />
-              </a>
-              <a
-                href="https://www.instagram.com/heyttsatra/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[#ff0000]"
-              >
-                <FaInstagram size={24} />
-              </a>
-              <a
-                href="https://x.com/satra_heytt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[#ff0000]"
-              >
-                <FaSquareXTwitter size={24} />
-              </a>
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl focus:outline-none">
+                        {isOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+                </div>
             </div>
-          </ul>
-        </div>
-      )}
-    </nav>
+        </motion.nav>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0, x: "100%" }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: "100%" }}
+                    transition={{ type: "tween", duration: 0.3 }}
+                    className="fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl md:hidden flex flex-col items-center justify-center gap-8"
+                >
+                    {navLinks.map((link) => (
+                        <a 
+                            key={link.name} 
+                            href={link.href}
+                            onClick={() => setIsOpen(false)}
+                            className="text-3xl text-white font-bold hover:text-crimson transition-colors"
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+
+                    <div className="flex gap-8 mt-8">
+                        <a href="https://github.com/heytt-satra" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-crimson text-2xl"><FaGithub /></a>
+                        <a href="https://www.linkedin.com/in/heytt-satra/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-crimson text-2xl"><FaLinkedin /></a>
+                        <a href="https://www.instagram.com/heyttsatra/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-crimson text-2xl"><FaInstagram /></a>
+                        <a href="https://x.com/satra_heytt" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-crimson text-2xl"><FaSquareXTwitter /></a>
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+    </>
   );
 };
 
