@@ -157,7 +157,7 @@ export const projects = [
     image: ATBOT,
     tags: ["ROS2", "Gazebo", "RVIZ"],
     github: "https://github.com/heytt-satra/my_bot",
-    
+
   },
   {
     id: 1,
@@ -167,16 +167,16 @@ export const projects = [
     image: marsrover,
     tags: ["Tensorflow", "YOLO", "ZED2", "Machine Learning"],
     github: "https://github.com/heytt-satra/Sign-Detection-System-for-Mars-Rover-using-YOLO-and-ZED2-Camera",
-    
+
   },
   {
-    id: 2,    title: "Stackit Social media app",
+    id: 2, title: "Stackit Social media app",
     description:
       "Web based QNA fourm application where users can post questions, answer others' queries, and engage in discussions. Built with React for the frontend, Node.js and Express for the backend, and PostgreSQL for data storage. Features include user authentication, real-time updates, and a responsive design.",
     image: Stackit,
     tags: ["React JS", "Typescript", "HTML", "Tailwind CSS", "Node JS", "Express JS", "PostgreSQL"],
     github: "https://github.com/heytt-satra/stackit",
-    
+
   },
   {
     id: 3,
@@ -195,7 +195,7 @@ export const projects = [
     image: qrng,
     tags: ["qiskit", "flask", "HTML", "CSS"],
     github: "https://github.com/heytt-satra/Quantum-Powered-Password-generator",
-    
+
   },
   {
     id: 5,
@@ -205,94 +205,50 @@ export const projects = [
     image: ocr,
     tags: ["Streamlit", "OpenCV", "pytorch", "transformers"],
     github: "https://github.com/heytt-satra/OCR-project-",
-     
-    
+
+
   },
 ];
 
 export const blogs = [
   {
-    id: 0,
-    title: "My Journey into Quantum Computing",
-    date: "November 15, 2025",
-    readTime: "5 min read",
-    excerpt: "Exploring the fascinating world of quantum computing and how it's shaping the future of technology. From Qiskit to building quantum-powered applications.",
-    tags: ["Quantum Computing", "Qiskit", "Technology"],
-    image: qrng,
-    content: `Quantum computing has always fascinated me. It's not just about faster computers; it's about solving problems that are fundamentally impossible for classical computers to tackle.
-
-My journey started when I first encountered Qiskit, IBM's open-source quantum computing framework. The idea that you could manipulate qubits and leverage quantum phenomena like superposition and entanglement to perform computations was mind-blowing.
-
-I built my first quantum application - a password generator that uses true quantum randomness. Unlike pseudo-random number generators, quantum systems provide genuine randomness, making them perfect for security applications.
-
-The learning curve was steep. Understanding quantum gates, circuits, and the mathematics behind quantum algorithms required dedication. But every breakthrough, from creating my first Bell state to implementing Grover's algorithm, was incredibly rewarding.
-
-Looking ahead, I'm excited about the potential of quantum computing in cryptography, drug discovery, and optimization problems. The field is still in its infancy, and there's so much to explore and contribute to this revolutionary technology.`
-  },
-  {
-    id: 1,
-    title: "Building Autonomous Robots with ROS2",
-    date: "November 10, 2025",
-    readTime: "7 min read",
-    excerpt: "A deep dive into robotics development using ROS2 and Gazebo simulation. Learn about sensor integration, autonomous navigation, and real-world applications.",
-    tags: ["Robotics", "ROS2", "AI/ML", "Gazebo"],
-    image: ATBOT,
-    content: `Robotics has been one of my greatest passions, combining hardware, software, and AI to create intelligent systems that can interact with the physical world.
-
-Working with ROS2 (Robot Operating System 2) opened up a world of possibilities. Unlike its predecessor, ROS2 offers real-time capabilities, improved security, and better support for multi-robot systems - crucial for modern robotics applications.
-
-One of my most exciting projects was building an autonomous differential drive robot in Gazebo simulation. I integrated LIDAR, RGB cameras, and depth sensors using URDF (Unified Robot Description Format). The challenge wasn't just about making the robot move; it was about making it understand its environment.
-
-The International Rover Challenge was a turning point. We developed a sign detection system using YOLO and ZED2 stereo vision for a Mars rover. The robot needed to recognize signs in real-time, determine their distance using depth estimation, and make autonomous navigation decisions. Integrating TensorFlow for directional prediction with the physical constraints of the rover was challenging but incredibly educational.
-
-The beauty of ROS2 lies in its modularity. Each component - sensors, controllers, planners - works as an independent node, communicating through topics and services. This architecture makes debugging easier and allows for rapid prototyping.
-
-For anyone interested in robotics, I highly recommend starting with simulation environments like Gazebo before moving to physical robots. It saves time, money, and provides a safe space to experiment with different algorithms and configurations.`
-  },
-  {
-    id: 2,
-    title: "The Future of Full-Stack Development",
-    date: "November 5, 2025",
-    readTime: "6 min read",
-    excerpt: "Exploring modern full-stack development with React, Node.js, and PostgreSQL. Best practices, performance optimization, and building scalable applications.",
-    tags: ["Web Development", "React", "Node.js", "PostgreSQL"],
-    image: Stackit,
-    content: `Full-stack development has evolved dramatically over the past few years. The modern stack I've been working with - React for frontend, Node.js with Express for backend, and PostgreSQL for database - represents a powerful combination for building scalable web applications.
-
-Let me share what I've learned building Stackit, a QNA forum application. The project taught me valuable lessons about architecture, performance, and user experience.
-
-On the frontend, React's component-based architecture is fantastic for building reusable UI elements. However, the real power comes from proper state management and optimization. I learned to leverage React hooks effectively, implement lazy loading, and optimize re-renders to ensure smooth performance.
-
-The backend required careful planning. Express.js provides flexibility, but with that comes responsibility. I implemented proper error handling, validation middleware, and structured the API following RESTful principles. Authentication and authorization were critical - using JWT tokens with proper expiration and refresh mechanisms.
-
-PostgreSQL proved to be an excellent choice for data storage. Its ACID compliance ensures data integrity, and its advanced features like full-text search and JSON support made implementing complex queries straightforward. Proper indexing and query optimization were crucial for performance as the dataset grew.
-
-One of the biggest lessons: always think about scalability from the start. Design your database schema carefully, use proper caching strategies, and write clean, maintainable code. Future you will thank present you.
-
-The journey of a full-stack developer is one of continuous learning. New frameworks and tools emerge constantly, but the fundamentals - understanding how data flows, writing efficient code, and prioritizing user experience - remain timeless.`
-  },
-  {
-    id: 3,
-    title: "Machine Learning in Practice: Lessons from OCR Development",
-    date: "October 28, 2025",
+    id: 1715629123456,
+    title: "The Future of AI in Web Development: Beyond Chatbots",
+    date: "May 12, 2025",
     readTime: "8 min read",
-    excerpt: "Real-world insights from building an OCR system for Hindi and English text. Training custom models, optimization techniques, and deployment strategies.",
-    tags: ["Machine Learning", "Deep Learning", "OCR", "PyTorch"],
-    image: ocr,
-    content: `Developing an Optical Character Recognition system for both Hindi and English text was one of my most challenging and rewarding projects. It taught me that machine learning in practice is very different from machine learning in tutorials.
-
-The project started with a clear goal: create an OCR system that could accurately extract text from images in both English and Hindi. For English, I used a pre-trained Microsoft model, which worked well out of the box. But Hindi presented unique challenges.
-
-Training a custom Hindi OCR model required 56,000 iterations and massive amounts of labeled data. Data preprocessing became crucial - normalizing images, handling different fonts, managing varying image qualities, and dealing with skewed or rotated text. I learned that in ML, data quality trumps model complexity.
-
-Model architecture decisions were critical. I experimented with different CNN architectures before settling on one that balanced accuracy and inference speed. Using PyTorch gave me the flexibility to customize the training loop and implement custom loss functions suited for character recognition.
-
-One major challenge was handling the nuances of Hindi script - conjunct consonants, matras, and the various forms characters can take. The model needed to understand not just individual characters but their contextual variations.
-
-Deployment was another learning experience. I built the application using Streamlit, making it accessible and user-friendly. But more importantly, I optimized it for offline use with locally stored models. This meant careful attention to model size, inference speed, and memory usage.
-
-Key takeaways: Start with data exploration, invest time in preprocessing, iterate quickly with small experiments, and always validate with real-world test cases. The gap between a model that works in development and one that performs reliably in production is significant.
-
-Machine learning is not magic - it's systematic experimentation, careful engineering, and continuous refinement. And that's what makes it so fascinating.`
+    excerpt: "Artificial Intelligence is transforming how we build the web. From predictive UX to autonomous code generation, discover the trends shaping 2025.",
+    tags: ["AI", "Web Development", "Future Tech", "LLM"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    content: "# The Future of AI in Web Development\n\nThe landscape of web development is undergoing a seismic shift. We are moving beyond simple chatbots and into an era of **autonomous agents** and **predictive user interfaces**.\n\n## Predictive UX\n\nImagine a website that adapts its layout in real-time based on user behavior. Using reinforcement learning models, we can now create interfaces that anticipate user needs before they even click."
+  },
+  {
+    id: 1715715523456,
+    title: "Mastering Full Stack Scalability: A Guide for 2025",
+    date: "June 01, 2025",
+    readTime: "12 min read",
+    excerpt: "Learn the architectural patterns that allow modern applications to handle millions of requests. Microservices, Serverless, and Edge Computing explained.",
+    tags: ["System Architecture", "Scalability", "Backend", "Performance"],
+    image: "https://images.unsplash.com/photo-1558494949-efc535b5c479?auto=format&fit=crop&q=80&w=800",
+    content: "# Mastering Scalability\n\nScalability isn't just about adding more servers; it's about **architectural elegance**. In this guide, we explore how to leverage edge computing to reduce latency by 40%.\n\n### Key Principles\n1. **Stateless Design**: Ensure your backend services can scale horizontally without friction.\n2. **Database Sharding**: Distribute your data to prevent bottlenecks."
+  },
+  {
+    id: 1715801923456,
+    title: "Building a Personal Brand in the Age of AI",
+    date: "June 15, 2025",
+    readTime: "6 min read",
+    excerpt: "In a world of automated content, authentic personal branding is your most valuable asset. Strategies for standing out as a developer.",
+    tags: ["Branding", "Career", "Soft Skills"],
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+    content: "# Personal Branding for Developers\n\nTechnical skills are the baseline. Your **story** is the differentiator. \n\n> \"Your brand is what people say about you when you're not in the room.\" - Jeff Bezos\n\nBuilding a digital garden, contributing to open source, and sharing your learning journey are the pillars of a strong developer brand in 2025."
+  },
+  {
+    id: 1715888323456,
+    title: "Optimization Techniques for Next.js Applications",
+    date: "July 03, 2025",
+    readTime: "10 min read",
+    excerpt: "Deep dive into advanced optimization strategies: Server Components, Streaming, and Image Optimization for perfect Lighthouse scores.",
+    tags: ["Next.js", "React", "Performance", "SEO"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    content: "# Optimizing Next.js\n\nPerformance is user experience. With Google's Core Web Vitals becoming a ranking factor, optimization is non-negotiable.\n\n## Server Components\n\nBy moving heavy JavaScript to the server, we reduce the client capability requirement and improve TTI (Time to Interactive) dramatically."
   }
 ];
