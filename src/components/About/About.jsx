@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden py-0"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-28 pb-12 lg:py-0"
     >
       {/* Cinematic Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-obsidian to-black z-0"></div>
