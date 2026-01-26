@@ -161,7 +161,7 @@ export const projects = [
     live: "https://blackboardcommunication.vercel.app/"
   },
   {
-    id: 2, 
+    id: 2,
     title: "Law Firm Website",
     description:
       "A professional, trust-building digital presence for a law firm. Features practice area details, attorney profiles, and client consultation scheduling, designed with a focus on credibility and user experience.",
@@ -169,6 +169,60 @@ export const projects = [
     tags: ["React", "UX Design", "Legal Tech", "Responsive"],
     github: "https://github.com/heytt-satra",
     live: "https://law-firm-website-hazel.vercel.app/"
+  },
+  {
+    id: 3,
+    title: "Autonomous Drive Robot Simulation",
+    description:
+      "Built a differential drive robot simulation in ROS2/Gazebo with LIDAR, RGB, and depth sensors using URDF. Implemented teleoperation and sensor visualization for testing autonomous navigation.",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
+    tags: ["ROS2", "Gazebo", "RVIZ"],
+    github: "https://github.com/heytt-satra/my_bot",
+  },
+  {
+    id: 4,
+    title: "Sign Detection System for Mars Rover",
+    description:
+      "Designed an AI-powered sign detection system using YOLO and ZED2 stereo vision, enabling autonomous rover navigation with real-time object recognition and depth estimation.",
+    image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80&w=1200",
+    tags: ["TensorFlow", "YOLO", "ZED2", "Machine Learning"],
+    github: "https://github.com/heytt-satra/Sign-Detection-System-for-Mars-Rover-using-YOLO-and-ZED2-Camera",
+  },
+  {
+    id: 5,
+    title: "Stackit Social Media App",
+    description:
+      "Web based QNA forum application where users can post questions, answer others' queries, and engage in discussions. Built with React, Node.js, Express, and PostgreSQL.",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200",
+    tags: ["React JS", "TypeScript", "Node JS", "Express JS", "PostgreSQL"],
+    github: "https://github.com/heytt-satra/stackit",
+  },
+  {
+    id: 6,
+    title: "Rocket Engine Simulation",
+    description:
+      "Built a 3D rocket engine simulation in Python with Matplotlib, adding realistic physics and telemetry to track altitude, velocity, and throttle.",
+    image: "https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?auto=format&fit=crop&q=80&w=1200",
+    tags: ["Python", "Matplotlib", "Numpy"],
+    github: "https://github.com/heytt-satra/RocketEngineSimulation",
+  },
+  {
+    id: 7,
+    title: "Quantum Password Generator",
+    description:
+      "Built a Flask web app utilizing Qiskit and IBM Quantum services to generate secure passwords with true quantum randomness.",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=1200",
+    tags: ["Qiskit", "Flask", "HTML", "CSS"],
+    github: "https://github.com/heytt-satra/Quantum-Powered-Password-generator",
+  },
+  {
+    id: 8,
+    title: "OCR for Hindi and English",
+    description:
+      "Developed an Optical Character Recognition (OCR) system for English and Hindi text recognition. Trained a custom Hindi model for 56,000 iterations.",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=1200",
+    tags: ["Streamlit", "OpenCV", "PyTorch", "Transformers"],
+    github: "https://github.com/heytt-satra/OCR-project-",
   },
 ];
 
