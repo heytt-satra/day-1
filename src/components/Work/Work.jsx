@@ -143,9 +143,9 @@ const ProjectCard = ({ project, index, onClick }) => {
              <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-90"
             />
-             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
         </div>
 
         <div className="absolute inset-0 z-10 p-8 flex flex-col justify-end">

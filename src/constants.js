@@ -39,15 +39,6 @@ import scarbluulogo from './assets/company_logo/scarbluu.png'; // --- IGNORE ---
 import nmimslogo from './assets/education_logo/nmims logo.png';
 
 
-// Project Section Logo's
-import ATBOT from './assets/work_logo/ATBOT.png';
-import marsrover from './assets/work_logo/MARSROVER.jpg';
-import rocketsim from './assets/work_logo/Rocketsim.png';
-import qrng from './assets/work_logo/QRNG PASS GEN.png';
-import Stackit from './assets/work_logo/Stackit.png';
-import ocr from './assets/work_logo/OCR.png';
-
-
 export const SkillsInfo = [
   {
     title: 'Full-Stack',
@@ -151,62 +142,33 @@ export const education = [
 export const projects = [
   {
     id: 0,
-    title: "Autonomous Drive Robot Simulation",
+    title: "VFC Omega",
     description:
-      "Built a differential drive robot simulation in ROS2/Gazebo with LIDAR, RGB, and depth sensors using URDF. Implemented teleoperation and sensor visualization for testing autonomous navigation.",
-    image: ATBOT,
-    tags: ["ROS2", "Gazebo", "RVIZ"],
-    github: "https://github.com/heytt-satra/my_bot",
-
+      "An exclusive invite-only networking platform for founders to connect through curated dinners and expert sessions. Features a marketplace for agencies to list services and connect with startup founders and investors.",
+    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=1200",
+    tags: ["React", "Node.js", "Networking", "Marketplace"],
+    github: "https://github.com/heytt-satra",
+    live: "https://bfc-omega.vercel.app/"
   },
   {
     id: 1,
-    title: "Sign Detection System for Mars rover",
+    title: "Blackboard Communication",
     description:
-      "Designed an AI-powered sign detection system using YOLO and ZED2 stereo vision, enabling autonomous rover navigation with real-time object recognition. Integrated TensorFlow-based directional prediction and depth estimation using the ZED2 camera to determine object distance and movement direction",
-    image: marsrover,
-    tags: ["Tensorflow", "YOLO", "ZED2", "Machine Learning"],
-    github: "https://github.com/heytt-satra/Sign-Detection-System-for-Mars-Rover-using-YOLO-and-ZED2-Camera",
-
+      "A comprehensive corporate website for a premier event management company. Showcases their portfolio, services, and expertise in organizing large-scale corporate events and brand activations.",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1200",
+    tags: ["React", "Tailwind CSS", "Event Management", "Portfolio"],
+    github: "https://github.com/heytt-satra",
+    live: "https://blackboardcommunication.vercel.app/"
   },
   {
-    id: 2, title: "Stackit Social media app",
+    id: 2, 
+    title: "Law Firm Website",
     description:
-      "Web based QNA fourm application where users can post questions, answer others' queries, and engage in discussions. Built with React for the frontend, Node.js and Express for the backend, and PostgreSQL for data storage. Features include user authentication, real-time updates, and a responsive design.",
-    image: Stackit,
-    tags: ["React JS", "Typescript", "HTML", "Tailwind CSS", "Node JS", "Express JS", "PostgreSQL"],
-    github: "https://github.com/heytt-satra/stackit",
-
-  },
-  {
-    id: 3,
-    title: "Rocket Engine Simulation ",
-    description:
-      "Built a 3D rocket engine simulation in Python with Matplotlib, adding realistic physics and telemetry to track altitude, velocity, and throttle. Optimized throttle sequences with debug tools for smooth ascent and descent, hitting altitudes over thousands of meters while boosting visualization and troubleshooting.",
-    image: rocketsim,
-    tags: ["Python", "Matplotlib", "Numpy"],
-    github: "https://github.com/heytt-satra/RocketEngineSimulation",
-  },
-  {
-    id: 4,
-    title: "Quantum based Password Generator",
-    description:
-      "Built a Flask web app utilizing Qiskit and IBM Quantum services to generate secure passwords with true quantum randomness. Implemented customizable password criteria, including length, uppercase, numbers, and symbols.",
-    image: qrng,
-    tags: ["qiskit", "flask", "HTML", "CSS"],
-    github: "https://github.com/heytt-satra/Quantum-Powered-Password-generator",
-
-  },
-  {
-    id: 5,
-    title: "OCR model for Hindi and English text extraction",
-    description:
-      "Developed an Optical Character Recognition (OCR) system for English and Hindi text recognition. Utilized a pre-trained Microsoft model for English OCR and trained a custom Hindi model for 56,000 iterations. Built and deployed the OCR system using Streamlit, making the application accessible for offline use with locally stored data.",
-    image: ocr,
-    tags: ["Streamlit", "OpenCV", "pytorch", "transformers"],
-    github: "https://github.com/heytt-satra/OCR-project-",
-
-
+      "A professional, trust-building digital presence for a law firm. Features practice area details, attorney profiles, and client consultation scheduling, designed with a focus on credibility and user experience.",
+    image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=1200",
+    tags: ["React", "UX Design", "Legal Tech", "Responsive"],
+    github: "https://github.com/heytt-satra",
+    live: "https://law-firm-website-hazel.vercel.app/"
   },
 ];
 
