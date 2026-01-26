@@ -65,14 +65,26 @@ const Work = () => {
                         ))}
                     </div>
                     <p className="text-gray-300 mb-8 leading-relaxed">{selectedProject.description}</p>
-                    <a 
-                        href={selectedProject.github}
-                        target="_blank"
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white rounded-xl font-bold hover:bg-crimson-dark transition-colors"
-                    >
-                        <FiGithub /> View Code
-                    </a>
+                    <div className="flex gap-4 flex-wrap">
+                        {selectedProject.live && (
+                            <a 
+                                href={selectedProject.live}
+                                target="_blank"
+                                rel="noopener noreferrer" 
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-crimson text-white rounded-xl font-bold hover:bg-crimson-dark transition-colors"
+                            >
+                                <FiExternalLink /> View Live
+                            </a>
+                        )}
+                        <a 
+                            href={selectedProject.github}
+                            target="_blank"
+                            rel="noopener noreferrer" 
+                            className="inline-flex items-center gap-2 px-6 py-3 border border-gray-600 text-white rounded-xl font-bold hover:border-crimson hover:text-crimson transition-colors"
+                        >
+                            <FiGithub /> View Code
+                        </a>
+                    </div>
                 </div>
             </motion.div>
           </motion.div>
@@ -151,12 +163,25 @@ const ProjectCard = ({ project, index, onClick }) => {
         <div className="absolute inset-0 z-10 p-8 flex flex-col justify-end">
             <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-crimson transition-colors">{project.title}</h3>
             <p className="text-gray-400 line-clamp-2 text-sm mb-4">{project.description}</p>
-            <div className="flex flex-wrap gap-2">
-                {project.tags.slice(0,3).map((tag, idx) => (
-                    <span key={idx} className="text-xs px-2 py-1 border border-glass-border rounded bg-black/50 text-gray-300">
-                        {tag}
-                    </span>
-                ))}
+            <div className="flex items-center justify-between">
+                <div className="flex flex-wrap gap-2">
+                    {project.tags.slice(0,3).map((tag, idx) => (
+                        <span key={idx} className="text-xs px-2 py-1 border border-glass-border rounded bg-black/50 text-gray-300">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+                {project.live && (
+                    <a 
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-4 py-2 bg-crimson text-white text-sm font-bold rounded-lg hover:bg-crimson-dark transition-colors flex items-center gap-2"
+                    >
+                        <FiExternalLink size={14} /> View
+                    </a>
+                )}
             </div>
         </div>
       </motion.div>
